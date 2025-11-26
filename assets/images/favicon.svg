@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Rocket Engineers">
+  <defs>
+    <linearGradient id="bg" x1="12" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff4d4d"/>
+      <stop offset="1" stop-color="#ff1f1f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <path fill="#ffffff" d="M32 9c6.6 6.8 10.6 15.6 10.6 22.2 0 7-4.9 12.6-10.6 12.6S21.4 38.2 21.4 31.2C21.4 24.6 25.4 15.8 32 9Zm0 13.5a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/>
+  <circle cx="32" cy="29.8" r="2.1" fill="#0a0a0a"/>
+  <path fill="#ffffff" d="M23.5 37.4 18 43l8.6-1.3zm17 0 8.6 6-5.5-7.3z"/>
+  <path fill="#ffe07d" d="M31.7 42.6c-2.5 1.6-4 4-4 6.7 0 1 .2 1.9.6 2.8 1.5-1.1 3.1-1.7 4.7-1.7s3.2.6 4.7 1.7c.4-.9.6-1.8.6-2.8 0-2.7-1.5-5.1-4-6.7-.4-.3-.9-.3-1.3 0Z"/>
+  <path fill="#ffffff" d="M32 20.3c3 0 5.5 2.5 5.5 5.5h-2.2c0-1.8-1.5-3.3-3.3-3.3z" opacity=".9"/>
+</svg>
