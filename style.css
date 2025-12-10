@@ -35,6 +35,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 p {
   margin: 0 0 0.75rem;
   line-height: 1.6;
@@ -249,7 +254,8 @@ main,
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: clamp(1.1rem, 2.5vw, 2rem);
   margin: 0.8rem auto 1.4rem;
-  min-height: 62vh;
+  min-height: 68vh;
+  align-items: center;
   isolation: isolate;
 }
 
@@ -283,7 +289,7 @@ main,
 .hero-intro {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.9rem;
   padding: clamp(0.6rem, 2vw, 1rem) 0;
   grid-column: 1 / span 7;
   max-width: 780px;
@@ -302,6 +308,7 @@ main,
 .hero-actions-block {
   grid-column: 1 / span 7;
   align-self: start;
+  margin-top: -0.2rem;
   --reveal-duration: 0.8s;
   --reveal-delay: 140ms;
 }
@@ -340,8 +347,8 @@ main,
 .event-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  padding: 0.9rem 1.6rem;
+  gap: 1.4rem;
+  padding: 0.85rem 1.4rem;
   border: 1px solid var(--border);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
@@ -384,8 +391,9 @@ main,
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.65rem;
   align-items: center;
+  margin-top: 0.2rem;
 }
 
 .availability {
@@ -473,9 +481,11 @@ main,
 }
 
 .sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2vw, 1.2rem);
+  justify-content: center;
+  align-items: stretch;
 }
 
 .sponsor-card {
@@ -484,10 +494,13 @@ main,
   background: rgba(255, 255, 255, 0.02);
   display: grid;
   place-items: center;
-  padding: 1.75rem;
-  min-height: 160px;
+  padding: clamp(1.25rem, 2vw, 1.9rem);
+  min-height: clamp(140px, 14vw, 170px);
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
   --reveal-duration: 0.65s;
+  flex: 1 1 clamp(160px, 22vw, 260px);
+  max-width: clamp(190px, 24vw, 280px);
+  min-width: clamp(160px, 20vw, 220px);
 }
 
 .sponsor-card:hover {
@@ -497,9 +510,10 @@ main,
 }
 
 .sponsor-card img {
-  max-width: 150px;
+  max-width: min(180px, 80%);
   width: 100%;
-  height: 80px;
+  height: auto;
+  max-height: 90px;
   object-fit: contain;
   filter: saturate(1.1);
 }
@@ -516,6 +530,8 @@ main,
 .sponsor-card:nth-of-type(10) { --reveal-delay: 380ms; }
 .sponsor-card:nth-of-type(11) { --reveal-delay: 420ms; }
 .sponsor-card:nth-of-type(12) { --reveal-delay: 460ms; }
+.sponsor-card:nth-of-type(13) { --reveal-delay: 500ms; }
+.sponsor-card:nth-of-type(14) { --reveal-delay: 540ms; }
 
 /* ==== Tickets ==== */
 .tickets {
@@ -611,6 +627,12 @@ main,
   width: 100%;
   overflow: hidden;
   align-self: stretch;
+}
+
+.ticket-direct-link {
+  margin-top: 0.4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .ticket-panel-header {
@@ -811,9 +833,10 @@ tito-widget .tito-ticket-quantity button:hover {
 /* ==== Footer ==== */
 .site-footer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
-  gap: 1rem;
+  justify-items: center;
+  gap: 2.25rem 3rem;
   padding: 1rem 0 1.4rem;
   border-top: 1px solid var(--border);
   margin-top: 0.8rem;
@@ -825,6 +848,9 @@ tito-widget .tito-ticket-quantity button:hover {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+  justify-self: start;
 }
 
 .footer-links a:hover {
@@ -834,6 +860,8 @@ tito-widget .tito-ticket-quantity button:hover {
 .social {
   display: flex;
   gap: 0.75rem;
+  justify-content: flex-end;
+  justify-self: end;
 }
 
 .social-icon {
@@ -851,6 +879,20 @@ tito-widget .tito-ticket-quantity button:hover {
   color: var(--rocket-red);
   border-color: rgba(255, 51, 51, 0.5);
   transform: translateY(-2px);
+}
+
+.footer-mark {
+  width: 170px;
+  max-width: 60vw;
+  height: auto;
+  display: block;
+  filter: saturate(1.05);
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
 }
 
 /* ==== Responsive tweaks ==== */
@@ -881,19 +923,33 @@ tito-widget .tito-ticket-quantity button:hover {
   }
 
   .pillars,
-  .sponsor-grid,
   .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .sponsor-grid {
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sponsor-card {
+    max-width: 100%;
+    width: 100%;
   }
 
   .site-footer {
     text-align: center;
     justify-items: center;
+    gap: 0.75rem;
+    justify-content: center;
   }
 
   .footer-links,
   .social {
     justify-content: center;
+    justify-self: center;
+    text-align: center;
   }
 
   .hero-intro {
@@ -911,6 +967,7 @@ tito-widget .tito-ticket-quantity button:hover {
 
   .hero-actions-block {
     grid-column: 1 / span 1;
+    margin-top: 0;
   }
 
   .hero-visual {
@@ -934,6 +991,7 @@ tito-widget .tito-ticket-quantity button:hover {
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.55rem;
   }
 
   .btn {
@@ -948,6 +1006,8 @@ tito-widget .tito-ticket-quantity button:hover {
     gap: 1.1rem;
     padding: 1.4rem 1.1rem 1.8rem;
     text-align: left;
+    min-height: 70vh;
+    align-items: center;
   }
 
   .hero-intro {
@@ -978,7 +1038,7 @@ tito-widget .tito-ticket-quantity button:hover {
 
   .hero-actions {
     width: 100%;
-    gap: 0.6rem;
+    gap: 0.55rem;
   }
 
   .event-meta {
