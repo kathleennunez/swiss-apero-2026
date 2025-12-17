@@ -532,6 +532,9 @@ main,
 .sponsor-card:nth-of-type(12) { --reveal-delay: 460ms; }
 .sponsor-card:nth-of-type(13) { --reveal-delay: 500ms; }
 .sponsor-card:nth-of-type(14) { --reveal-delay: 540ms; }
+.sponsor-card:nth-of-type(15) { --reveal-delay: 580ms; }
+.sponsor-card:nth-of-type(16) { --reveal-delay: 620ms; }
+.sponsor-card:nth-of-type(17) { --reveal-delay: 660ms; }
 
 /* ==== Tickets ==== */
 .tickets {
