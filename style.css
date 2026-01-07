@@ -536,6 +536,7 @@ main,
 .sponsor-card:nth-of-type(16) { --reveal-delay: 620ms; }
 .sponsor-card:nth-of-type(17) { --reveal-delay: 660ms; }
 .sponsor-card:nth-of-type(18) { --reveal-delay: 700ms; }
+.sponsor-card:nth-of-type(19) { --reveal-delay: 740ms; }
 
 /* ==== Tickets ==== */
 .tickets {
